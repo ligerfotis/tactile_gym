@@ -55,7 +55,9 @@ def main():
 
     # set seed for deterministic results
     env.seed(seed)
-    env.action_space.np_random.seed(seed)
+    # Fotis
+    env.action_space.np_random.random(seed)
+    # env.action_space.np_random.seed(seed)
 
     # create controllable parameters on GUI
     action_ids = []

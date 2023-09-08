@@ -1,5 +1,5 @@
 import sys
-import gym
+import gymnasium as gym
 import numpy as np
 from opensimplex import OpenSimplex
 
@@ -445,7 +445,7 @@ class BaseSurfaceEnv(BaseTactileEnv):
         elif self.noise_mode == "simplex":
 
             # set seed for simplex noise
-            self.simplex_noise = OpenSimplex(seed=self.np_random.randint(1e8))
+            self.simplex_noise = OpenSimplex(seed=self.np_random.integers(1e8))
 
             if self.movement_mode in ["yz", "yzRx"]:
                 self.heightfield_data = self.gen_heigtfield_simplex_1d()
@@ -455,7 +455,7 @@ class BaseSurfaceEnv(BaseTactileEnv):
 
         elif self.noise_mode == "vertical_simplex":
             # set seed for simplex noise
-            self.simplex_noise = OpenSimplex(seed=self.np_random.randint(1e8))
+            self.simplex_noise = OpenSimplex(seed=self.np_random.integers(1e8))
             if self.movement_mode in ["xRz"]:
                 self.heightfield_data = self.gen_heigtfield_simplex_1d_vertical()
 

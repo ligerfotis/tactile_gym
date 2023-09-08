@@ -1,6 +1,6 @@
 import os
 import sys
-import gym
+import gymnasium as gym
 import numpy as np
 
 from tactile_gym.robots.arms.robot import Robot

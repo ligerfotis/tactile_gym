@@ -1,5 +1,5 @@
 import sys
-import gym
+import gymnasium as gym
 import numpy as np
 import pybullet as pb
 import pybullet_utils.bullet_client as bc
@@ -61,6 +61,8 @@ class BaseTactileEnv(gym.Env):
     def seed(self, seed=None):
         self._seed = seed
         self.np_random, seed = gym.utils.seeding.np_random(seed)
+        # Fotis
+        self.np_random = np.random.default_rng(seed)
         return [seed]
 
     def __del__(self):

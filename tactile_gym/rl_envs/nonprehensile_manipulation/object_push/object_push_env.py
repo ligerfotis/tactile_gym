@@ -1,6 +1,6 @@
 import os
 import sys
-import gym
+import gymnasium as gym
 import numpy as np
 from opensimplex import OpenSimplex
 
@@ -286,7 +286,7 @@ class ObjectPushEnv(BaseObjectEnv):
         Generates smooth trajectory of goals
         """
         # initialise noise
-        simplex_noise = OpenSimplex(seed=self.np_random.randint(1e8))
+        simplex_noise = OpenSimplex(seed=self.np_random.integers(1e8))
         init_offset = self.obj_width / 2 + self.traj_spacing
 
         # generate smooth 1d traj using opensimplex
